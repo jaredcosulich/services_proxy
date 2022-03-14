@@ -1,4 +1,4 @@
-const https = require('https');
+const http = require('http');
 const httpProxy = require('http-proxy');
  
 //
@@ -11,11 +11,13 @@ const proxy = httpProxy.createProxyServer({});
 // a web request to the target passed in the options
 // also you can use `proxy.ws()` to proxy a websockets request
 //
-var server = https.createServer(function(req, res) {
+const server = http.createServer((req, res) => {
   // You can define here your custom logic to handle the request
   // and then proxy the request.
+  console.log("HI")
   console.log("REQUEST", req)
   proxy.web(req, res, { target: 'privatehostedganache:8545' });
+
 });
  
 console.log("listening on port 8000")
