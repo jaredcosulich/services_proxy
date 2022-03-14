@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
     proxy.web(req, res, { target: 'http://privatehostedganache:10000' });
   } else {
     console.log("GANACHE")
-    proxy.web(req, res, { target: 'privatehostedganache:8545' });
+    proxy.web(req, res, { target: 'http://privatehostedganache:8545' });
   }
   console.log("COMPLETE!")
 });
