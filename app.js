@@ -23,7 +23,7 @@ const server = http.createServer((req, res) => {
     console.log("GANACHE")
     proxy.web(req, res, { target: 'privatehostedganache:8545' });
   }
-
+  console.log("COMPLETE!")
 });
  
 console.log("listening on port 8000")
