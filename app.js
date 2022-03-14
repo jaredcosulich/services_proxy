@@ -18,5 +18,5 @@ var server = https.createServer(function(req, res) {
   proxy.web(req, res, { target: 'privatehostedganache:8545' });
 });
  
-console.log("listening on port 443")
-server.listen(443);
+console.log("listening on port 8000")
+server.listen(8000);
