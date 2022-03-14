@@ -1,0 +1,9 @@
+{
+  "name": "services_proxy",
+  "version": "0.0.1",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  }
+}
