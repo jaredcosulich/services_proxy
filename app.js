@@ -14,9 +14,13 @@ const proxy = httpProxy.createProxyServer({});
 const server = http.createServer((req, res) => {
   // You can define here your custom logic to handle the request
   // and then proxy the request.
+
+  console.log("HI!")
   if (req.url.startsWith('/api')) {
+    console.log("API")
     proxy.web(req, res, { target: 'privatehostedganache:10000' });
   } else {
+    console.log("GANACHE")
     proxy.web(req, res, { target: 'privatehostedganache:8545' });
   }
 
