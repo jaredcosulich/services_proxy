@@ -27,4 +27,4 @@ const server = http.createServer((req, res) => {
 });
  
 console.log("listening on port 8000")
-server.listen(8000);
+server.listen(8000, '0.0.0.0');
