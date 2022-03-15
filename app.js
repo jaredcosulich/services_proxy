@@ -3,7 +3,7 @@ const cors = require('cors');
 const httpProxy = require('http-proxy');
 require('dotenv').config()
 
-const appPort = process.env.PORT || 8000; 
+const appPort = parseInt(process.env.PORT || 8000); 
 
 const app = express()
 app.use(cors())
