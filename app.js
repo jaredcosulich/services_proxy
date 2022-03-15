@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const httpProxy = require('http-proxy');
+require('dotenv').config()
 
 const appPort = process.env.PORT || 8000; 
 
@@ -15,11 +16,11 @@ app.use(cors())
 const proxy = httpProxy.createProxyServer({});
 
 app.all('/api/*', (req, res) => {
-  proxy.web(req, res, { target: 'http://privatehostedganache:10000' });
+  proxy.web(req, res, { target: process.env.API_URL });
 })
 
 app.all('/', (req, res) => {
-  proxy.web(req, res, { target: 'http://privatehostedganache:8545' });
+  proxy.web(req, res, { target: process.env.GANACHE_URL });
 })
 
 app.listen(appPort, '0.0.0.0', () => console.log(`App listening on port ${appPort}...`))
