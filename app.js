@@ -19,6 +19,7 @@ app.all('/api/*', (req, res) => {
 })
 
 app.all('/', (req, res) => {
+  console.log("GANACHE", req.url, req.method, req.body, req.headers, req.ip);
   proxy.web(req, res, { target: 'http://privatehostedganache:8545' });
 })
 
